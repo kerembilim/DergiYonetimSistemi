@@ -39,16 +39,18 @@ namespace dys2.Controllers
            
             return View(a);
         }
-        [HttpGet]
-        public ActionResult DosyaYukle()
+        
+        public ActionResult DosyaYukle(int id)
         {
+            ViewBag.makalem = id;
+
             return View();
         }
 
         [HttpPost]
-        public ActionResult DosyaYukle(HttpPostedFileBase file, int makaleid)
+        public ActionResult DosyaYukle(HttpPostedFileBase file, int id)
         {
-
+            
 
             if (file != null && file.ContentLength > 0)
             {
@@ -59,6 +61,8 @@ namespace dys2.Controllers
                     var folder = Server.MapPath("~/pdfs");
                     var randomfilename = Path.GetRandomFileName();
                     var filename = Path.ChangeExtension(randomfilename, ".pdf");
+                    db.Makaleler.Find(id).DosyaIsmi = filename;
+                    db.SaveChanges();
 
                     var path = Path.Combine(folder, filename);
 

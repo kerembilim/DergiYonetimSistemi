@@ -28,6 +28,7 @@ namespace dys2.Models
         public string Ozet { get; set; }
         public string Doi { get; set; }
         public string Kaynaklar { get; set; }
+        public string DosyaIsmi { get; set; }
         public virtual List<AnahtarKelime> Anahtarlar { get; set; }
         //public HttpPostedFileBase MakaleDosyasi { get; set; }
         public OnayDurum SekreterOnay { get; set; }
