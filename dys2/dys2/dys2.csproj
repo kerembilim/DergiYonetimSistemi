@@ -279,6 +279,7 @@
     <Content Include="Views\AnahtarKelime\Edit.cshtml" />
     <Content Include="Views\AnahtarKelime\Index.cshtml" />
     <Content Include="Views\Makale\AnahtarEkle.cshtml" />
+    <Content Include="Views\Makale\DosyaYukle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
