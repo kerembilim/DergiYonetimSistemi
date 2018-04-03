@@ -1,0 +1,77 @@
+﻿@model IEnumerable<dys2.Models.Makale>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YayinBasligi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ozet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kaynaklar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SekreterOnay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EditorOnay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BolumEditoruOnay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HakemYorum)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YayinBasligi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ozet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kaynaklar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SekreterOnay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EditorOnay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BolumEditoruOnay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HakemYorum)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Anahtar Ekle", "AnahtarEkle", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
