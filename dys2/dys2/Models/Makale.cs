@@ -30,6 +30,7 @@ namespace dys2.Models
         public string Kaynaklar { get; set; }
         public string DosyaIsmi { get; set; }
         public virtual List<AnahtarKelime> Anahtarlar { get; set; }
+
         //public HttpPostedFileBase MakaleDosyasi { get; set; }
         public OnayDurum SekreterOnay { get; set; }
         public OnayDurum EditorOnay { get; set; }

@@ -1,0 +1,16 @@
+﻿@model dys2.Areas.Admin.Models.RolKullaniciEkleModel
+@{
+    ViewBag.Title = "RolKullaniciEkle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>RolKullaniciEkle</h2>
+
+@using (Html.BeginForm("RolKullaniciEkle", "RolYonetim", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.KullaniciAdi)  @Html.TextBoxFor(m => m.KullaniciAdi)
+    <br />
+    @Html.LabelFor(m => m.RolAdi)  @Html.TextBoxFor(m => m.RolAdi)
+    <br />
+    <input type="submit" />
+}
