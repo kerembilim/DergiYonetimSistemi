@@ -88,6 +88,11 @@ namespace dys2.Controllers
 
             return View();
         }
+        public ActionResult DosyaAc(int ?id)
+        {
+          Makale m1=  db.Makaleler.Find(id);
+            return View(m1);
+        }
     
     public ActionResult AnahtarEsle (int makaleid,int anahtarid)
         {
