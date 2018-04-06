@@ -195,6 +195,10 @@
     <Compile Include="Areas\Admin\Controllers\RolYonetimController.cs" />
     <Compile Include="Areas\Admin\Models\RolEkleModel.cs" />
     <Compile Include="Areas\Admin\Models\RolKullaniciEkleModel.cs" />
+    <Compile Include="Areas\Editor\Controllers\EditorController.cs" />
+    <Compile Include="Areas\Editor\Controllers\EditorHomeController.cs" />
+    <Compile Include="Areas\Editor\Controllers\EditorYonetimController.cs" />
+    <Compile Include="Areas\Editor\EditorAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnahtarKelimeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1252,6 +1256,13 @@
     <Content Include="Areas\Admin\Views\RolYonetim\Index.cshtml" />
     <Content Include="Areas\Admin\Views\RolYonetim\RolEkle.cshtml" />
     <Content Include="Areas\Admin\Views\RolYonetim\RolKullaniciEkle.cshtml" />
+    <Content Include="Areas\Editor\Views\web.config" />
+    <Content Include="Areas\Editor\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\Create.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\Delete.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\Details.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\Edit.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1312,6 +1323,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Editor\Models\" />
+    <Folder Include="Areas\Editor\Views\EditorHome\" />
+    <Folder Include="Areas\Editor\Views\Editor\" />
     <Folder Include="assets\plugins\jquery-fileupload\server\node\public\files\thumbnail\" />
     <Folder Include="assets\plugins\jquery-fileupload\server\php\files\thumbnail\" />
     <Folder Include="pdfs\" />

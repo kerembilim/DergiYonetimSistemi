@@ -17,10 +17,10 @@ namespace dys2.Models
         public int Id { get; set; }
         public enum OnayDurum
         {
-            OnayBekliyor = 1,
-            Kabul = 2,
-            Red = 3,
-            Duzenlenmeli = 4
+            
+            Kabul = 1,
+            Red = 2,
+            Duzenlenmeli = 3
         }
        
 
@@ -31,7 +31,12 @@ namespace dys2.Models
         public string DosyaIsmi { get; set; }
         public virtual List<AnahtarKelime> Anahtarlar { get; set; }
 
-        //public HttpPostedFileBase MakaleDosyasi { get; set; }
+        public enum BicimDenetleyiciOnay
+        {
+            Kabul = 1,
+            Red = 2
+        }
+        public BicimDenetleyiciOnay BicimDenetleyici { get; set; }
         public OnayDurum SekreterOnay { get; set; }
         public OnayDurum EditorOnay { get; set; }
         public OnayDurum BolumEditoruOnay { get; set; }
