@@ -25,7 +25,7 @@ namespace dys2.Models
 
             List<Makale> makaleler = new List<Makale>()
             {
-                new Makale(){YayinBasligi="yayın basligi veri yapıları",Ozet="veri yap...",Doi="123",Kaynaklar="evdeki kitaplar",SekreterOnay=Makale.OnayDurum.Kabul,BolumEditoruOnay=Makale.OnayDurum.Kabul,EditorOnay=Makale.OnayDurum.Kabul,HakemYorum="abc" },
+                new Makale(){YayinBasligi="yayın basligi veri yapıları",Ozet="veri yap...",Doi="123",Kaynaklar="evdeki kitaplar",SekreterOnay=Makale.OnayDurum.Kabul,BolumEditoruOnay=Makale.OnayDurum.Kabul,EditorOnay=Makale.OnayDurum.Kabul,HakemYorum1="abc" },
 
             };
             foreach (var item in makaleler)

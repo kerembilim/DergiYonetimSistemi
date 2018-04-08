@@ -40,6 +40,13 @@ namespace dys2.Models
         public OnayDurum SekreterOnay { get; set; }
         public OnayDurum EditorOnay { get; set; }
         public OnayDurum BolumEditoruOnay { get; set; }
-        public string HakemYorum { get; set; }
+        public string BolumEditoruMail { get; set; }
+        public string HakemMail1 { get; set; }
+        public string HakemMail2 { get; set; }
+        public string HakemMail3 { get; set; }
+        public string HakemYorum1 { get; set; }
+        public string HakemYorum2 { get; set; }
+        public string HakemYorum3 { get; set; }
+
     }
 }
