@@ -203,6 +203,10 @@
     <Compile Include="Areas\Editor\Controllers\EditorHomeController.cs" />
     <Compile Include="Areas\Editor\Controllers\EditorYonetimController.cs" />
     <Compile Include="Areas\Editor\EditorAreaRegistration.cs" />
+    <Compile Include="Areas\Hakem\Controllers\HakemController.cs" />
+    <Compile Include="Areas\Hakem\Controllers\HakemHomeController.cs" />
+    <Compile Include="Areas\Hakem\Controllers\HakemYonetimController.cs" />
+    <Compile Include="Areas\Hakem\HakemAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnahtarKelimeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1274,6 +1278,13 @@
     <Content Include="Areas\BolumEditoru\Views\BolumEditoruYonetim\Details.cshtml" />
     <Content Include="Areas\BolumEditoru\Views\BolumEditoruYonetim\Edit.cshtml" />
     <Content Include="Areas\BolumEditoru\Views\BolumEditoruYonetim\Index.cshtml" />
+    <Content Include="Areas\Hakem\Views\web.config" />
+    <Content Include="Areas\Hakem\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Hakem\Views\HakemYonetim\Create.cshtml" />
+    <Content Include="Areas\Hakem\Views\HakemYonetim\Delete.cshtml" />
+    <Content Include="Areas\Hakem\Views\HakemYonetim\Details.cshtml" />
+    <Content Include="Areas\Hakem\Views\HakemYonetim\Edit.cshtml" />
+    <Content Include="Areas\Hakem\Views\HakemYonetim\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1340,6 +1351,9 @@
     <Folder Include="Areas\Editor\Models\" />
     <Folder Include="Areas\Editor\Views\EditorHome\" />
     <Folder Include="Areas\Editor\Views\Editor\" />
+    <Folder Include="Areas\Hakem\Models\" />
+    <Folder Include="Areas\Hakem\Views\HakemHome\" />
+    <Folder Include="Areas\Hakem\Views\Hakem\" />
     <Folder Include="assets\plugins\jquery-fileupload\server\node\public\files\thumbnail\" />
     <Folder Include="assets\plugins\jquery-fileupload\server\php\files\thumbnail\" />
     <Folder Include="pdfs\" />
