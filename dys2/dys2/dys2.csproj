@@ -195,6 +195,10 @@
     <Compile Include="Areas\Admin\Controllers\RolYonetimController.cs" />
     <Compile Include="Areas\Admin\Models\RolEkleModel.cs" />
     <Compile Include="Areas\Admin\Models\RolKullaniciEkleModel.cs" />
+    <Compile Include="Areas\BicimDenetleyici\BicimDenetleyiciAreaRegistration.cs" />
+    <Compile Include="Areas\BicimDenetleyici\Controllers\BicimDenetleyiciController.cs" />
+    <Compile Include="Areas\BicimDenetleyici\Controllers\BicimDenetleyiciHomeController.cs" />
+    <Compile Include="Areas\BicimDenetleyici\Controllers\BicimDenetleyiciYonetimController.cs" />
     <Compile Include="Areas\BolumEditoru\BolumEditoruAreaRegistration.cs" />
     <Compile Include="Areas\BolumEditoru\Controllers\BolumEditoruController.cs" />
     <Compile Include="Areas\BolumEditoru\Controllers\BolumEditoruHomeController.cs" />
@@ -1285,6 +1289,13 @@
     <Content Include="Areas\Hakem\Views\HakemYonetim\Details.cshtml" />
     <Content Include="Areas\Hakem\Views\HakemYonetim\Edit.cshtml" />
     <Content Include="Areas\Hakem\Views\HakemYonetim\Index.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\web.config" />
+    <Content Include="Areas\BicimDenetleyici\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\Create.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\Delete.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\Details.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\Edit.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1345,6 +1356,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\BicimDenetleyici\Models\" />
+    <Folder Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciHome\" />
+    <Folder Include="Areas\BicimDenetleyici\Views\BicimDenetleyici\" />
     <Folder Include="Areas\BolumEditoru\Models\" />
     <Folder Include="Areas\BolumEditoru\Views\BolumEditoruHome\" />
     <Folder Include="Areas\BolumEditoru\Views\BolumEditoru\" />

@@ -22,8 +22,8 @@ namespace dys2.Models
             Red = 2,
             Duzenlenmeli = 3
         }
-       
 
+        public Boolean OnanaGonder { get; set; }
         public string YayinBasligi { get; set; }
         public string Ozet { get; set; }
         public string Doi { get; set; }
