@@ -1,0 +1,20 @@
+﻿@model IEnumerable<dys2.Models.AnahtarKelime>
+@{
+    ViewBag.Title = "AnahtarEkle";
+    Layout = "~/Areas/BolumEditoru/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>AnahtarEkle</h2>
+
+@foreach (var item in Model)
+{
+
+    <td>
+
+        @Html.ActionLink(item.Kelime, "AnahtarEsle", new { makaleid = ViewBag.makalem, anahtarid = item.Id }, null)
+
+    </td>
+}
+
+
+
+

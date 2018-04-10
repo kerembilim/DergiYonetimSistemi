@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace dys2.Areas.BolumEditoru.Controllers
 {
+    [Authorize(Roles = "bolumeditoru")]
     public class BolumEditoruHomeController : Controller
     {
         // GET: BolumEditoru/BolumEditoruHome

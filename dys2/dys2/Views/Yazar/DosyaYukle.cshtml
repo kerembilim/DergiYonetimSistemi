@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    @ViewData["message"]
+
+    <form action="" method="post" enctype="multipart/form-data">
+
+        <label for="file">filename</label>
+        <input type="hidden" name="makaleid" value=@ViewBag.makalem />
+        <input type="file" name="file" id="file" />
+
+        <input type="submit" value="Gönder" />
+    </form>
+
+</body>
+</html>

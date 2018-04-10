@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using dys2.Models;
+using System.IO;
 
 namespace dys2.Areas.BolumEditoru.Controllers
 {
@@ -21,7 +22,7 @@ namespace dys2.Areas.BolumEditoru.Controllers
             List<Makale> m1 = new List<Makale>();
             foreach (var item in db.Makaleler)
             {
-                if ((item.SekreterOnay == Makale.OnayDurum.Kabul) && (item.BolumEditoruMail==User.Identity.Name) )
+                if ((item.SekreterOnay == Makale.OnayDurum.Kabul) && (item.BolumEditoruMail==User.Identity.Name)&& item.OnayaGonder == true)
                 {
                     m1.Add(item);
                 }
@@ -29,6 +30,89 @@ namespace dys2.Areas.BolumEditoru.Controllers
 
             return View(m1);
            
+        }
+        public ActionResult AnahtarEkle(int? id)
+        {
+            List<AnahtarKelime> a = new List<AnahtarKelime>();
+            foreach (var item in db.AnahtarKelimeler)
+            {
+                if (!(db.Makaleler.Find(id).Anahtarlar.Any(x => x.Kelime == item.Kelime)))//hata fırlatıyor
+                {
+                    a.Add(item);
+                }
+
+                ViewBag.makalem = id;
+
+
+            }
+
+            return View(a);
+
+        }
+        public ActionResult DosyaYukle(int id)
+        {
+            ViewBag.makalem = id;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DosyaYukle(HttpPostedFileBase file, int id)
+        {
+
+
+            if (file != null && file.ContentLength > 0)
+            {
+                var extensition = Path.GetExtension(file.FileName);
+
+                if (extensition == ".pdf")
+                {
+                    var folder = Server.MapPath("~/pdfs");
+                    var randomfilename = Path.GetRandomFileName();
+                    var filename = Path.ChangeExtension(randomfilename, ".pdf");
+                    db.Makaleler.Find(id).DosyaIsmi = filename;
+                    db.SaveChanges();
+
+                    var path = Path.Combine(folder, filename);
+
+                    //var filename = Path.GetFileName(file.FileName);
+                    //var path = Path.Combine(Server.MapPath("~/upload"), filename);
+
+                    file.SaveAs(path);
+                }
+                else
+                {
+                    ViewData["message"] = "Pdf dosyası seçiniz.";
+                }
+            }
+            else
+            {
+                ViewData["message"] = "Bir dosya seçiniz";
+            }
+
+            //veritabanı kayıt işlemini
+            //Product => productid , image = filename
+            //product nesnesini veritanına kayıt et.
+            //<img src="/upload/@image">
+
+            return View();
+        }
+        public ActionResult DosyaAc(int? id)
+        {
+            Makale m1 = db.Makaleler.Find(id);
+            return View(m1);
+        }
+
+        public ActionResult AnahtarEsle(int makaleid, int anahtarid)
+        {
+            AnahtarKelime k1 = new AnahtarKelime();
+            k1 = db.AnahtarKelimeler.Find(anahtarid);
+            Makale m1 = new Makale();
+            m1 = db.Makaleler.Find(makaleid);
+            m1.Anahtarlar.Add(k1);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
         // GET: BolumEditoru/BolumEditoruYonetim/Details/5

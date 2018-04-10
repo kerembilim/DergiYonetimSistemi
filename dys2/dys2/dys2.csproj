@@ -216,6 +216,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MakaleController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1296,6 +1297,18 @@
     <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\Details.cshtml" />
     <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\Edit.cshtml" />
     <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\Index.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\AnahtarEkle.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\DosyaYukle.cshtml" />
+    <Content Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciYonetim\DosyaAc.cshtml" />
+    <Content Include="Areas\BolumEditoru\Views\BolumEditoruYonetim\AnahtarEkle.cshtml" />
+    <Content Include="Areas\BolumEditoru\Views\BolumEditoruYonetim\DosyaYukle.cshtml" />
+    <Content Include="Areas\BolumEditoru\Views\BolumEditoruYonetim\DosyaAc.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\AnahtarEkle.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\DosyaYukle.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\DosyaAc.cshtml" />
+    <Content Include="Areas\Hakem\Views\HakemYonetim\AnahtarEkle.cshtml" />
+    <Content Include="Areas\Hakem\Views\HakemYonetim\DosyaYukle.cshtml" />
+    <Content Include="Areas\Hakem\Views\HakemYonetim\DosyaAc.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1353,6 +1366,14 @@
     <Content Include="Views\Makale\AnahtarEkle.cshtml" />
     <Content Include="Views\Makale\DosyaYukle.cshtml" />
     <Content Include="Views\Makale\DosyaAc.cshtml" />
+    <Content Include="Views\Yazar\Create.cshtml" />
+    <Content Include="Views\Yazar\Delete.cshtml" />
+    <Content Include="Views\Yazar\Details.cshtml" />
+    <Content Include="Views\Yazar\Edit.cshtml" />
+    <Content Include="Views\Yazar\Index.cshtml" />
+    <Content Include="Views\Yazar\AnahtarEkle.cshtml" />
+    <Content Include="Views\Yazar\DosyaYukle.cshtml" />
+    <Content Include="Views\Yazar\DosyaAc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

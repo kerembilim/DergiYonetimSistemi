@@ -23,7 +23,7 @@ namespace dys2.Models
             Duzenlenmeli = 3
         }
 
-        public Boolean OnanaGonder { get; set; }
+        public Boolean OnayaGonder { get; set; }
         public string YayinBasligi { get; set; }
         public string Ozet { get; set; }
         public string Doi { get; set; }
@@ -36,6 +36,7 @@ namespace dys2.Models
             Kabul = 1,
             Red = 2
         }
+        public string YazarName { get; set; }
         public BicimDenetleyiciOnay BicimDenetleyici { get; set; }
         public OnayDurum SekreterOnay { get; set; }
         public OnayDurum EditorOnay { get; set; }

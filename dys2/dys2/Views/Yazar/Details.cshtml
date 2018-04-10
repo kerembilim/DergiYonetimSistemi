@@ -1,0 +1,155 @@
+﻿@model dys2.Models.Makale
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Makale</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OnayaGonder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnayaGonder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YayinBasligi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YayinBasligi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ozet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ozet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kaynaklar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kaynaklar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DosyaIsmi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DosyaIsmi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BicimDenetleyici)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BicimDenetleyici)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SekreterOnay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SekreterOnay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditorOnay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditorOnay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BolumEditoruOnay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BolumEditoruOnay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BolumEditoruMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BolumEditoruMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HakemMail1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HakemMail1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HakemMail2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HakemMail2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HakemMail3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HakemMail3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HakemYorum1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HakemYorum1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HakemYorum2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HakemYorum2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HakemYorum3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HakemYorum3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace dy2.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AdminHomeController : AdminController
     {
         // GET: Admin/Home

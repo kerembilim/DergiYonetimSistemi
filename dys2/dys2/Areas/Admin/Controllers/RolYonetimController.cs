@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace dys2.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class RolYonetimController : AdminController
     {
         ApplicationDbContext context = new ApplicationDbContext();
