@@ -11,9 +11,6 @@ namespace dy2.Areas.Admin.Controllers
     public class AdminHomeController : AdminController
     {
         // GET: Admin/Home
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
     }
 }

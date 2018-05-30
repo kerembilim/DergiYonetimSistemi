@@ -8,9 +8,10 @@
 
 @using (Html.BeginForm("RolKullaniciEkle", "RolYonetim", FormMethod.Post))
 {
-    @Html.LabelFor(m => m.KullaniciAdi)  @Html.TextBoxFor(m => m.KullaniciAdi)
+    @Html.LabelFor(m => m.KullaniciAdi)    @Html.DropDownListFor(m => m.KullaniciAdi, new SelectList(ViewBag.Kullanicilar, "ID","UserName"))//ok
+
     <br />
-    @Html.LabelFor(m => m.RolAdi)  @Html.TextBoxFor(m => m.RolAdi)
+    @Html.LabelFor(m => m.RolAdi) @Html.DropDownListFor(m => m.RolAdi, new SelectList(ViewBag.Roller, "ID", "Name"))
     <br />
     <input type="submit" />
 }

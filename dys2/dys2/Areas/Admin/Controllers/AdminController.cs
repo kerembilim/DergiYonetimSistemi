@@ -9,5 +9,6 @@ namespace dys2.Areas.Admin.Controllers
     [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
+
     }
 }

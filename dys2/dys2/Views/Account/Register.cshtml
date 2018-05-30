@@ -3,12 +3,14 @@
     ViewBag.Title = "Kaydol";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>
+    Yazar Ol
+</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Yeni hesap oluşturun.</h4>
+   
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
@@ -16,19 +18,22 @@
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
-        <div class="form-group">
+    </div>
+    <div class="form-group"  >
             @Html.LabelFor(m => m.Isim, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @Html.TextBoxFor(m => m.Isim, new { @class = "form-control" })
             </div>
         </div>
-    </div>
+   
+
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
         </div>
     </div>
+
     <div class="form-group">
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

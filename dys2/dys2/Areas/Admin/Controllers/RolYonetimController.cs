@@ -45,6 +45,11 @@ namespace dys2.Areas.Admin.Controllers
 
         public ActionResult RolKullaniciEkle()
         {
+
+
+            ViewBag.Roller = context.Roles.ToList();
+            
+            ViewBag.Kullanicilar = context.Users.ToList(); 
             return View();
         }
 
@@ -58,7 +63,7 @@ namespace dys2.Areas.Admin.Controllers
             var userManager = new UserManager<ApplicationUser>(userStore);
 
 
-            var kullanici = userManager.FindByName(model.KullaniciAdi);
+            var kullanici = userManager.FindById(model.KullaniciAdi);
 
             if (!userManager.IsInRole(kullanici.Id, model.RolAdi))
             {

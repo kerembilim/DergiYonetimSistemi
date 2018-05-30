@@ -10,7 +10,31 @@ namespace dys2.Controllers
     {
         public ActionResult Index()
         {
+            if (User.IsInRole("admin"))
+            {
+                return RedirectToAction("Index", "RolYonetim", new { area = "Admin" });
+            }
+            else if (User.IsInRole("bicimdenetleyici"))
+            {
+                return RedirectToAction("Index", "BicimDenetleyiciYonetim", new { area = "BicimDenetleyici" });
+            }
+            else if (User.IsInRole("bolumeditoru"))
+            {
+                return RedirectToAction("Index", "BolumEditoruYonetim", new { area = "BolumEditoru" });
+            }
+            else if (User.IsInRole("editor"))
+            {
+                return RedirectToAction("Index", "EditorYonetim", new { area = "Editor" });
+            }
+            else if (User.IsInRole("hakem"))
+            {
+                return RedirectToAction("Index", "HakemYonetim", new { area = "Hakem" });
+            }
+
+
             return View();
+           
+                
         }
 
         public ActionResult About()
