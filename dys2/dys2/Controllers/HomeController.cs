@@ -30,6 +30,14 @@ namespace dys2.Controllers
             {
                 return RedirectToAction("Index", "HakemYonetim", new { area = "Hakem" });
             }
+            else if (User.IsInRole("sekreter"))
+            {
+                return RedirectToAction("Index", "SekreterYonetim", new { area = "Sekreter" });
+            }
+            else if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index","Yazar");
+            }
 
 
             return View();

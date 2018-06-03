@@ -20,14 +20,75 @@ namespace dys2.Controllers
         public ActionResult Index()
         {
             List<Makale> m1 = new List<Makale>();
-            foreach (var item in db.Makaleler)
+            
+            
+            foreach (var item in db.Makaleler.ToList())
             {
-                if (item.OnayaGonder==false&&item.YazarName==User.Identity.Name)
+                if (item.SekreterOnay==0)
                 {
-                    m1.Add(item);
+                    item.Durum = "sekreter onayı bekleniyor";
+                    db.SaveChanges();
+                }
+                else if (item.SekreterOnay==Makale.OnayDurum.Red)
+                {
+                    item.Durum = "makaleniz kabul edilmedi";
+                    db.SaveChanges();
+                }
+                else if (item.SekreterOnay==Makale.OnayDurum.Kabul&&item.BolumEditoruMail=="")
+                {
+                    item.Durum ="bölum editoru atanması bekleniyor";
+                    db.SaveChanges();
+                }
+                else if (item.HakemMail1==""&&item.HakemMail2==""&&item.HakemMail3=="")
+                {
+                    item.Durum = "hakem atanması bekleniyor";
+                    db.SaveChanges();
+                }
+                else if (item.HakemYorum1==""&&item.HakemYorum2==""&&item.HakemYorum3=="")
+                {
+                    item.Durum = "hakem görüşleri bekleniyor";
+                    db.SaveChanges();
+                }
+                else if (item.BolumEditoruOnay==0)
+                {
+                    item.Durum = "bölüm editörü onayı bekleniyor";
+                }
+                else if (item.BolumEditoruOnay==Makale.OnayDurum.Duzenlenmeli)
+                {
+                    item.Durum = "revize istendi";
+                    db.SaveChanges();
+                }
+                else if (item.BolumEditoruOnay==Makale.OnayDurum.Red)
+                {
+                    item.Durum = "makaleniz kabul edilmedi";
+                    db.SaveChanges();
+                }
+                else if (item.BicimDenetleyici==0)
+                {
+                    item.Durum = "biçim denetleyici onayı bekleniyor";
+                    db.SaveChanges();
+                }
+                else if (item.EditorOnay==0)
+                {
+                    item.Durum = "Editör onayı bekleniyor";
+                    db.SaveChanges();
+                }
+                else if (item.EditorOnay==Makale.OnayDurum.Duzenlenmeli)
+                {
+                    item.Durum = "revize istendi";
+                    db.SaveChanges();
+                }
+                else if (item.EditorOnay==Makale.OnayDurum.Red)
+                {
+                    item.Durum = "makaleniz kabul edilmedi";
+                    db.SaveChanges();
+                }
+                else
+                {
+                    item.Durum = "yayın sürecinde";
                 }
             }
-
+            m1 = db.Makaleler.ToList();
             return View(m1);
         }
         public ActionResult AnahtarEkle(int? id)
@@ -35,7 +96,7 @@ namespace dys2.Controllers
             List<AnahtarKelime> a = new List<AnahtarKelime>();
             foreach (var item in db.AnahtarKelimeler)
             {
-                if (!(db.Makaleler.Find(id).Anahtarlar.Any(x => x.Kelime == item.Kelime)))//hata fırlatıyor
+                if (!(db.Makaleler.Find(id).Anahtarlar.Any(x => x.Kelime == item.Kelime)))
                 {
                     a.Add(item);
                 }
@@ -114,6 +175,12 @@ namespace dys2.Controllers
             return RedirectToAction("Index");
 
         }
+        public ActionResult OnayaGonder(int ?id)
+        {
+            db.Makaleler.Find(id).OnayaGonder = true;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         // GET: Yazar/Details/5
         public ActionResult Details(int? id)
@@ -174,7 +241,7 @@ namespace dys2.Controllers
         // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,OnayaGonder,YayinBasligi,Ozet,Doi,Kaynaklar,DosyaIsmi,BicimDenetleyici,SekreterOnay,EditorOnay,BolumEditoruOnay,BolumEditoruMail,HakemMail1,HakemMail2,HakemMail3,HakemYorum1,HakemYorum2,HakemYorum3")] Makale makale)
+        public ActionResult Edit([Bind(Include = "Id,OnayaGonder,YayinBasligi,Ozet,Doi,Kaynaklar,BicimDenetleyici,SekreterOnay,EditorOnay,BolumEditoruOnay,BolumEditoruMail,HakemMail1,HakemMail2,HakemMail3,HakemYorum1,HakemYorum2,HakemYorum3")] Makale makale)
         {
             if (ModelState.IsValid)
             {

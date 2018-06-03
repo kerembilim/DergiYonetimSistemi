@@ -48,6 +48,7 @@ namespace dys2.Models
         public string HakemYorum1 { get; set; }
         public string HakemYorum2 { get; set; }
         public string HakemYorum3 { get; set; }
+        public string Durum { get; set; }
 
     }
 }

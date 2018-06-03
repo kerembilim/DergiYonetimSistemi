@@ -2,14 +2,12 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Areas/BolumEditoru/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/BicimDenetleyici/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -19,14 +17,9 @@
             @Html.DisplayNameFor(model => model.Ozet)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Doi)
+            @Html.DisplayNameFor(model => model.YazarName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Kaynaklar)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DosyaIsmi)
-        </th>
+        
        
        
        
@@ -45,14 +38,9 @@
             @Html.DisplayFor(modelItem => item.Ozet)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Doi)
+            @Html.DisplayFor(modelItem => item.YazarName)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kaynaklar)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DosyaIsmi)
-        </td>
+       
 
 
 

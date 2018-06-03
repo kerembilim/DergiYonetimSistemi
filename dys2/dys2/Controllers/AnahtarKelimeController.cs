@@ -52,7 +52,7 @@ namespace dys2.Controllers
             {
                 db.AnahtarKelimeler.Add(anahtarKelime);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Yazar");
             }
 
             return View(anahtarKelime);

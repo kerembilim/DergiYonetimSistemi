@@ -5,11 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Makalelerim</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <input type="button" class="btn btn-success" value="Yeni Makale" onclick="location.href='@Url.Action("Create")'" />
+    <input type="button" class="btn btn-warning" value="Anahtar Kelime Ekle" onclick="location.href='@Url.Action("Create","AnahtarKelime")'" />
+   
 </p>
+   
 <table class="table">
     <tr>
         
@@ -19,9 +22,8 @@
         <th>
             @Html.DisplayNameFor(model => model.Ozet)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Doi)
-        </th>
+        
+       
         <th>
             @Html.DisplayNameFor(model => model.Kaynaklar)
         </th>
@@ -29,30 +31,82 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.YayinBasligi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ozet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Doi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kaynaklar)
-        </td>
-        
-        <td>
-            @Html.ActionLink("Onaya Gönder", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Anahtar Ekle", "AnahtarEkle", new { id = item.Id }) |
-            @Html.ActionLink("Dosya Yükle", "DosyaYukle", new { id = item.Id }) |
-            @Html.ActionLink("Dosya Ac", "DosyaAc", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    if (item.OnayaGonder==false && item.YazarName == User.Identity.Name)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.YayinBasligi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ozet)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Kaynaklar)
+            </td>
+
+            <td>
+                <input type="button" value="Onaya Gönder" onclick="location.href='@Url.Action("OnayaGonder", new { id = item.Id })'" />
+                <input type="button" value="Anahtar Kelime Ekle" onclick="location.href='@Url.Action("AnahtarEkle", new { id = item.Id })'" />
+                <input type="button" value="Dosya Yükle" onclick="location.href='@Url.Action("DosyaYukle", new { id = item.Id })'" />
+                <input type="button" value="Dosya aç" onclick="location.href='@Url.Action("DosyaAc", new { id = item.Id })'" />
+                <input type="button" value="Sil" onclick="location.href='@Url.Action("Delete", new { id = item.Id })'" />
+            </td>
+        </tr>
+    }
+
 }
+
+</table>
+
+<h3>Onaya Gönderdiklerim</h3>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.YayinBasligi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ozet)
+        </th>
+       
+        <th>
+         @Html.DisplayNameFor(model=>model.Durum)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.OnayaGonder == true && item.YazarName==User.Identity.Name)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.YayinBasligi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ozet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Durum)
+                </td>
+
+                <td>
+
+
+                    <input type="button" value="Dosya aç" onclick="location.href='@Url.Action("DosyaAc", new { id = item.Id })'" />
+
+
+
+                </td>
+            </tr>
+        }
+
+    }
 
 </table>

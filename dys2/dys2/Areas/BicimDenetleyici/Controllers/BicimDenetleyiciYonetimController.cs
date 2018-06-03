@@ -30,6 +30,19 @@ namespace dys2.Areas.BicimDenetleyici.Controllers
 
             return View(m1);
         }
+        public ActionResult Arsiv() {
+            List<Makale> m1 = new List<Makale>();
+
+            foreach (var item in db.Makaleler)
+            {
+                if (item.OnayaGonder==true)
+                {
+                    m1.Add(item);
+                }
+            }
+
+            return View(m1);
+        }
         public ActionResult AnahtarEkle(int? id)
         {
             List<AnahtarKelime> a = new List<AnahtarKelime>();
@@ -130,27 +143,7 @@ namespace dys2.Areas.BicimDenetleyici.Controllers
         }
 
         // GET: BicimDenetleyici/BicimDenetleyiciYonetim/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: BicimDenetleyici/BicimDenetleyiciYonetim/Create
-        // Aşırı gönderim saldırılarından korunmak için, lütfen bağlamak istediğiniz belirli özellikleri etkinleştirin, 
-        // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,YayinBasligi,Ozet,Doi,Kaynaklar,DosyaIsmi,BicimDenetleyici,SekreterOnay,EditorOnay,BolumEditoruOnay,BolumEditoruMail,HakemMail1,HakemMail2,HakemMail3,HakemYorum1,HakemYorum2,HakemYorum3")] Makale makale)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Makaleler.Add(makale);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(makale);
-        }
+       
 
         // GET: BicimDenetleyici/BicimDenetleyiciYonetim/Edit/5
         public ActionResult Edit(int? id)
