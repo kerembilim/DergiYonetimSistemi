@@ -1,0 +1,13 @@
+﻿@model dys2.Models.Makale
+@{
+    ViewBag.Title = "BolumEditoruAta";
+    Layout = "~/Areas/Editor/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>BolumEditoruAta</h2>
+
+@using (Html.BeginForm("BolumEditorAta", "EditorYonetim", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.BolumEditoruMail)
+    <input type="submit" />
+}

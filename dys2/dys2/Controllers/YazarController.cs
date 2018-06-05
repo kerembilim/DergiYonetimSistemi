@@ -34,17 +34,17 @@ namespace dys2.Controllers
                     item.Durum = "makaleniz kabul edilmedi";
                     db.SaveChanges();
                 }
-                else if (item.SekreterOnay==Makale.OnayDurum.Kabul&&item.BolumEditoruMail=="")
+                else if (item.SekreterOnay==Makale.OnayDurum.Kabul&&item.BolumEditoruMail==null)
                 {
                     item.Durum ="bölum editoru atanması bekleniyor";
                     db.SaveChanges();
                 }
-                else if (item.HakemMail1==""&&item.HakemMail2==""&&item.HakemMail3=="")
+                else if (item.HakemMail1==null&&item.HakemMail2==null&&item.HakemMail3==null)
                 {
                     item.Durum = "hakem atanması bekleniyor";
                     db.SaveChanges();
                 }
-                else if (item.HakemYorum1==""&&item.HakemYorum2==""&&item.HakemYorum3=="")
+                else if (item.HakemYorum1==null&&item.HakemYorum2==null&&item.HakemYorum3==null)
                 {
                     item.Durum = "hakem görüşleri bekleniyor";
                     db.SaveChanges();
@@ -86,6 +86,7 @@ namespace dys2.Controllers
                 else
                 {
                     item.Durum = "yayın sürecinde";
+                    db.SaveChanges();
                 }
             }
             m1 = db.Makaleler.ToList();

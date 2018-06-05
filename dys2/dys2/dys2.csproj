@@ -1319,6 +1319,8 @@
     <Content Include="Areas\Sekreter\Views\SekreterYonetim\Edit.cshtml" />
     <Content Include="Areas\Sekreter\Views\SekreterYonetim\Delete.cshtml" />
     <Content Include="Areas\Sekreter\Views\SekreterYonetim\Arsiv.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\Arsiv.cshtml" />
+    <Content Include="Areas\Editor\Views\EditorYonetim\BolumEditorAta.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -49,10 +49,22 @@ namespace dys2.Areas.Sekreter.Controllers
             Makale m1 = db.Makaleler.Find(id);
             return View(m1);
         }
+        public ActionResult Onayla(int ?id)
+        {
+            db.Makaleler.Find(id).SekreterOnay = Makale.OnayDurum.Kabul;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Red(int? id)
+        {
+            db.Makaleler.Find(id).SekreterOnay = Makale.OnayDurum.Red;
 
-       
+            return RedirectToAction("Index");
+        }
 
-      
+
+
+
         public ActionResult Details(int? id)
         {
             if (id == null)

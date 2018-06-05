@@ -8,12 +8,15 @@ using System.Web;
 using System.Web.Mvc;
 using dys2.Models;
 using System.IO;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
 
 namespace dys2.Areas.Editor.Controllers
 {
     [Authorize(Roles = "editor")]
     public class EditorYonetimController : Controller
     {
+        ApplicationDbContext context = new ApplicationDbContext();
         
         private MakaleAnahtarContext db = new MakaleAnahtarContext();
 
@@ -24,6 +27,30 @@ namespace dys2.Areas.Editor.Controllers
             foreach (var item in db.Makaleler)
             {
                 if ((item.SekreterOnay == Makale.OnayDurum.Kabul) && (item.BicimDenetleyici == 0)&&(item.OnayaGonder == true) || ((item.BolumEditoruOnay == Makale.OnayDurum.Kabul)&&(item.OnayaGonder == true) && (item.BicimDenetleyici == Makale.BicimDenetleyiciOnay.Kabul)))
+                {
+                    m1.Add(item);
+                }
+            }
+
+            return View(m1);
+        }
+        public ActionResult BolumEditorAta(int ?id)
+        {
+            ViewBag.BolumEditorleri = context.Users;            
+            return View();
+        }
+        [HttpPost]
+        public void BolumEditorAta(string a)
+        {
+
+        }
+        public ActionResult Arsiv()
+        {
+            List<Makale> m1 = new List<Makale>();
+
+            foreach (var item in db.Makaleler)
+            {
+                if (item.OnayaGonder == true)
                 {
                     m1.Add(item);
                 }
