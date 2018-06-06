@@ -1,4 +1,4 @@
-﻿@model dys2.Models.Makale
+﻿@model dys2.Areas.Editor.Models.MailEkle
 @{
     ViewBag.Title = "BolumEditoruAta";
     Layout = "~/Areas/Editor/Views/Shared/_AdminLayout.cshtml";
@@ -6,8 +6,11 @@
 
 <h2>BolumEditoruAta</h2>
 
+
 @using (Html.BeginForm("BolumEditorAta", "EditorYonetim", FormMethod.Post))
 {
+        
     @Html.TextBoxFor(m => m.BolumEditoruMail)
+    <input type="hidden" name="makaleid" value=@ViewBag.Id />
     <input type="submit" />
 }

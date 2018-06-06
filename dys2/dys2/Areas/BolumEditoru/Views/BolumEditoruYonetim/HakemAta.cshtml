@@ -1,0 +1,18 @@
+﻿@model dys2.Areas.BolumEditoru.Models.MailEkle
+@{
+    ViewBag.Title = "HakemAta";
+    Layout = "~/Areas/BolumEditoru/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>HakemAta</h2>
+
+
+@using (Html.BeginForm("HakemAta", "BolumEditoruYonetim", FormMethod.Post))
+{
+
+    @Html.TextBoxFor(m => m.HakemMail1)
+    @Html.TextBoxFor(m => m.HakemMail2)
+    @Html.TextBoxFor(m => m.HakemMail3)
+    <input type="hidden" name="makaleid" value=@ViewBag.Id />
+    <input type="submit" />
+}

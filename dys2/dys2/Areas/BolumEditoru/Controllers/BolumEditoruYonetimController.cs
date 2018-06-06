@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using dys2.Models;
 using System.IO;
+using dys2.Areas.BolumEditoru.Models;
 
 namespace dys2.Areas.BolumEditoru.Controllers
 {
@@ -30,6 +31,33 @@ namespace dys2.Areas.BolumEditoru.Controllers
 
             return View(m1);
            
+        }
+        public ActionResult HakemAta(int? id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+        [HttpPost]
+        public void HakemAta(MailEkle mail, int? id)
+        {
+            db.Makaleler.Find(id).HakemMail1 = mail.HakemMail1;
+            db.Makaleler.Find(id).HakemMail2 = mail.HakemMail2;
+            db.Makaleler.Find(id).HakemMail3 = mail.HakemMail3;
+            db.SaveChanges();
+        }
+        public ActionResult Arsiv()
+        {
+            List<Makale> m1 = new List<Makale>();
+
+            foreach (var item in db.Makaleler)
+            {
+                if (item.OnayaGonder == true)
+                {
+                    m1.Add(item);
+                }
+            }
+
+            return View(m1);
         }
         public ActionResult AnahtarEkle(int? id)
         {

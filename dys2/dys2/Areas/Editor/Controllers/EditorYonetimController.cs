@@ -10,6 +10,7 @@ using dys2.Models;
 using System.IO;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
+using dys2.Areas.Editor.Models;
 
 namespace dys2.Areas.Editor.Controllers
 {
@@ -26,7 +27,7 @@ namespace dys2.Areas.Editor.Controllers
          List<Makale> m1 = new List<Makale>();
             foreach (var item in db.Makaleler)
             {
-                if ((item.SekreterOnay == Makale.OnayDurum.Kabul) && (item.BicimDenetleyici == 0)&&(item.OnayaGonder == true) || ((item.BolumEditoruOnay == Makale.OnayDurum.Kabul)&&(item.OnayaGonder == true) && (item.BicimDenetleyici == Makale.BicimDenetleyiciOnay.Kabul)))
+                if ((item.SekreterOnay == Makale.OnayDurum.Kabul) && (item.BicimDenetleyici == 0)&&(item.OnayaGonder == true)&&(item.BolumEditoruMail==null) || ((item.BolumEditoruOnay == Makale.OnayDurum.Kabul)&&(item.OnayaGonder == true) && (item.BicimDenetleyici == Makale.BicimDenetleyiciOnay.Kabul)))
                 {
                     m1.Add(item);
                 }
@@ -36,13 +37,14 @@ namespace dys2.Areas.Editor.Controllers
         }
         public ActionResult BolumEditorAta(int ?id)
         {
-            ViewBag.BolumEditorleri = context.Users;            
+            ViewBag.Id = id;
             return View();
         }
         [HttpPost]
-        public void BolumEditorAta(string a)
+        public void BolumEditorAta(MailEkle mail,int ?id)
         {
-
+            db.Makaleler.Find(id).BolumEditoruMail = mail.BolumEditoruMail;
+            db.SaveChanges();
         }
         public ActionResult Arsiv()
         {

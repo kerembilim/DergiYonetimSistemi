@@ -203,10 +203,12 @@
     <Compile Include="Areas\BolumEditoru\Controllers\BolumEditoruController.cs" />
     <Compile Include="Areas\BolumEditoru\Controllers\BolumEditoruHomeController.cs" />
     <Compile Include="Areas\BolumEditoru\Controllers\BolumEditoruYonetimController.cs" />
+    <Compile Include="Areas\BolumEditoru\Models\MailEkle.cs" />
     <Compile Include="Areas\Editor\Controllers\EditorController.cs" />
     <Compile Include="Areas\Editor\Controllers\EditorHomeController.cs" />
     <Compile Include="Areas\Editor\Controllers\EditorYonetimController.cs" />
     <Compile Include="Areas\Editor\EditorAreaRegistration.cs" />
+    <Compile Include="Areas\Editor\Models\MailEkle.cs" />
     <Compile Include="Areas\Hakem\Controllers\HakemController.cs" />
     <Compile Include="Areas\Hakem\Controllers\HakemHomeController.cs" />
     <Compile Include="Areas\Hakem\Controllers\HakemYonetimController.cs" />
@@ -1321,6 +1323,7 @@
     <Content Include="Areas\Sekreter\Views\SekreterYonetim\Arsiv.cshtml" />
     <Content Include="Areas\Editor\Views\EditorYonetim\Arsiv.cshtml" />
     <Content Include="Areas\Editor\Views\EditorYonetim\BolumEditorAta.cshtml" />
+    <Content Include="Areas\BolumEditoru\Views\BolumEditoruYonetim\HakemAta.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1384,10 +1387,8 @@
     <Folder Include="Areas\BicimDenetleyici\Models\" />
     <Folder Include="Areas\BicimDenetleyici\Views\BicimDenetleyiciHome\" />
     <Folder Include="Areas\BicimDenetleyici\Views\BicimDenetleyici\" />
-    <Folder Include="Areas\BolumEditoru\Models\" />
     <Folder Include="Areas\BolumEditoru\Views\BolumEditoruHome\" />
     <Folder Include="Areas\BolumEditoru\Views\BolumEditoru\" />
-    <Folder Include="Areas\Editor\Models\" />
     <Folder Include="Areas\Editor\Views\EditorHome\" />
     <Folder Include="Areas\Editor\Views\Editor\" />
     <Folder Include="Areas\Hakem\Models\" />
